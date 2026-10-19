@@ -1,28 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Protein Cost Per Gram Calculator - Under maintenance</title>
-<meta name="robots" content="noindex, nofollow">
-<meta name="site-status" content="maintenance">
-<meta name="description" content="This tool is temporarily offline while it is rebuilt.">
+<title>Protein Cost Per Gram Calculator</title>
+<meta name="description" content="Compare protein powder and food by cost per gram. Find the cheapest protein.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://us-protein-cost-per-gram.enjoy-onepage.com/">
+<meta name="theme-color" content="#16a34a">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Protein Cost Per Gram Calculator">
+<meta property="og:title" content="Protein Cost Per Gram Calculator">
+<meta property="og:description" content="Compare protein powder and food by cost per gram. Find the cheapest protein.">
+<meta property="og:url" content="https://us-protein-cost-per-gram.enjoy-onepage.com/">
+<meta property="og:image" content="https://us-protein-cost-per-gram.enjoy-onepage.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Protein Cost Per Gram Calculator">
+<meta name="twitter:description" content="Compare protein powder and food by cost per gram. Find the cheapest protein.">
+<meta name="twitter:image" content="https://us-protein-cost-per-gram.enjoy-onepage.com/og-image.png">
+<link rel="alternate" type="application/rss+xml" title="Protein Calculator RSS" href="https://us-protein-cost-per-gram.enjoy-onepage.com/rss.xml">
+<link rel="sitemap" type="application/xml" href="https://us-protein-cost-per-gram.enjoy-onepage.com/sitemap.xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://us-protein-cost-per-gram.enjoy-onepage.com/#webapp",
+      "name": "Protein Cost Per Gram Calculator",
+      "url": "https://us-protein-cost-per-gram.enjoy-onepage.com/",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "All",
+      "inLanguage": "en",
+      "description": "An interactive nutritional economics tool that calculates the cost per gram of protein across protein powders, meats, eggs, and dairy to find the most cost-effective protein sources.",
+      "image": "https://us-protein-cost-per-gram.enjoy-onepage.com/og-image.png",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://us-protein-cost-per-gram.enjoy-onepage.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is cost per gram of protein calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Total protein content is calculated by multiplying the number of servings by the grams of protein per serving. Total price is then divided by total protein grams: Price ÷ (Servings × Grams of Protein per Serving)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which protein sources typically offer the lowest cost per gram?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bulk whey protein concentrate, wholesale chicken breast, canned tuna, and large eggs generally rank as the most cost-effective protein sources, frequently averaging under $0.05 per gram of complete protein."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the standard 25g serving cost comparison?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because standard athletic and clinical protein doses for muscle protein synthesis range between 20g and 30g per meal, our calculator normalizes all foods to a standard 25g protein portion for easy comparison."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my grocery prices or meal data saved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All cost math runs locally in your web browser. No grocery inputs, prices, or dietary logs are uploaded or stored."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- ADSENSE START: loader -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2228289204702106" crossorigin="anonymous"></script>
+<!-- ADSENSE END: loader -->
 <style>
-  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #f8fafc; color: #0f172a; }
-  main { max-width: 560px; margin: 12vh auto; padding: 32px 24px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; }
-  h1 { font-size: 1.4rem; margin: 0 0 12px; }
-  p { line-height: 1.6; color: #334155; }
-  a { color: #1d4ed8; font-weight: 600; }
-  .tag { display: inline-block; font-size: .8rem; font-weight: 700; color: #92400e; background: #fef3c7; border-radius: 999px; padding: 4px 10px; margin-bottom: 14px; }
+:root{--bg:#f0fdf4;--card:#fff;--ink:#0f172a;--muted:#475569;--accent:#16a34a;--accent-hover:#15803d;--line:#dcfce7;--r:#b91c1c}
+*{box-sizing:border-box}
+html,body{margin:0;max-width:100%;overflow-x:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-wrap:anywhere}
+.header{background:linear-gradient(135deg,#15803d,#16a34a);color:#fff;text-align:center;padding:26px 16px 22px}
+.header h1{margin:0;font-size:1.7rem}
+.header-sub{opacity:.92;margin-top:6px;font-size:.95rem}
+.wrap{max-width:1080px;margin:0 auto;padding:12px 14px 8px}
+.grid2{display:grid;grid-template-columns:1fr;gap:14px}
+@media (min-width:1024px){.grid2{grid-template-columns:5fr 7fr;align-items:start}.src-card{position:sticky;top:12px}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin:14px 0}
+.grid2 .card{margin:0}
+.card h2{font-size:1.15rem;margin:4px 0 10px}
+.lbl{display:block;font-weight:600;margin:8px 0 4px;font-size:.92rem}
+input[type=text],input[type=number]{width:100%;font:inherit;font-size:1rem;padding:8px 10px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;color:var(--ink)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>div{flex:1 1 120px;min-width:0}
+.btn{font:inherit;border:1px solid #cbd5e1;background:#fff;color:var(--ink);border-radius:10px;padding:8px 13px;cursor:pointer;transition:background .15s}
+.btn:hover{background:#f8fafc}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+.btn.primary:hover{background:var(--accent-hover)}
+.btn.sm{padding:4px 10px;font-size:.86rem;border-radius:8px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+@media (max-width:600px){.metric-grid{grid-template-columns:1fr}}
+.metric-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:12px}
+.metric-val{font-size:1.55rem;font-weight:800;color:var(--accent);margin:2px 0}
+.metric-lbl{font-size:.82rem;color:var(--muted);font-weight:600;text-transform:uppercase}
+.comp-table{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:12px}
+.comp-table th,.comp-table td{padding:8px 10px;border-bottom:1px solid #f1f5f9;text-align:left}
+.comp-table th{background:#f8fafc;font-weight:700;color:var(--muted)}
+.rank-badge{display:inline-block;padding:2px 8px;border-radius:6px;font-size:.78rem;font-weight:700;background:#dcfce7;color:#166534}
+.hint{font-size:.86rem;color:var(--muted);margin:6px 0}
+.notice{border-color:#fcd34d;background:#fffbeb}
+.faq-item h3{font-size:1rem;margin:12px 0 4px}
+.faq-item p{margin:0;color:#334155}
+.src{font-size:.82rem;color:var(--muted)}
+.ad-box{max-width:1080px;margin:10px auto;padding:0 14px;background:transparent;overflow:hidden;text-align:center}
+.ad-top ins{max-height:90px}
+.footer{text-align:center;font-size:.85rem;color:var(--muted);padding:18px 14px 28px}
+.footer a{color:var(--muted);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0f172a;color:#fff;padding:10px 18px;border-radius:999px;font-size:.9rem;opacity:0;pointer-events:none;transition:opacity .2s;z-index:50;max-width:90vw}
+.toast.show{opacity:1}
+@media (prefers-reduced-motion: reduce){.toast{transition:none}}
 </style>
 </head>
 <body>
-<main>
-  <span class="tag">Under maintenance</span>
+<header class="header">
   <h1>Protein Cost Per Gram Calculator</h1>
-  <p>This tool is temporarily offline. We found that the previous version did not work the way it was described, so we took it down while we rebuild it properly.</p>
-  <p>Please check back later.</p>
-  <p><a href="https://enjoy-onepage.com/">Browse our other free tools</a></p>
+  <div class="header-sub">Compare protein powder, meats &amp; groceries by cost per gram · 100% private in-browser</div>
+</header>
+
+<!-- ADSENSE START: top -->
+<div class="ad-box ad-top">
+  <ins class="adsbygoogle" style="display:block;height:60px;max-height:90px" data-ad-client="ca-pub-2228289204702106" data-ad-slot="3824727725" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- ADSENSE END: top -->
+
+<main class="wrap">
+  <div class="grid2">
+    <section class="card src-card" aria-labelledby="in-h">
+      <h2 id="in-h">1. Item Nutrition &amp; Price</h2>
+
+      <label class="lbl" for="foodName">Product / Food Name</label>
+      <input type="text" id="foodName" value="Whey Protein Powder (5 lb Tub)">
+
+      <div class="row" style="margin-top:6px;">
+        <div>
+          <label class="lbl" for="price">Package Price ($)</label>
+          <input type="number" id="price" min="0.1" step="0.01" value="64.99">
+        </div>
+        <div>
+          <label class="lbl" for="servings">Servings per Tub / Pack</label>
+          <input type="number" id="servings" min="1" step="0.5" value="73">
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:6px;">
+        <div>
+          <label class="lbl" for="proteinPerServing">Protein per Serving (g)</label>
+          <input type="number" id="proteinPerServing" min="1" step="0.1" value="24">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn primary" id="btnCalculate">Calculate &amp; Compare</button>
+        <button type="button" class="btn sm" id="btnPresetWhey">Whey Tub</button>
+        <button type="button" class="btn sm" id="btnPresetChicken">Chicken Breast</button>
+        <button type="button" class="btn sm" id="btnPresetEggs">Eggs (18 pk)</button>
+        <button type="button" class="btn sm" id="btnPresetTuna">Canned Tuna</button>
+      </div>
+      <p class="hint">Instant calculation in your browser memory. No food logs or prices are stored.</p>
+    </section>
+
+    <section class="card result" aria-labelledby="out-h">
+      <h2 id="out-h">2. Cost Efficiency Analysis</h2>
+
+      <div class="metric-grid">
+        <div class="metric-box">
+          <div class="metric-lbl">Cost per Gram of Protein</div>
+          <div class="metric-val" id="resCostPerGram">$0.037 / g</div>
+          <div class="hint" id="resTotalProtein">Total: 1,752g protein per package</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-lbl">Cost per 25g Serving</div>
+          <div class="metric-val" id="resCostPer25g" style="color:#0284c7;">$0.93 / dose</div>
+          <div class="hint">Standard 25g muscle-building portion</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:1rem;margin:16px 0 6px;">Benchmark Grocery Comparison</h3>
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Protein Source</th>
+            <th>Cost / Gram</th>
+            <th>Cost / 25g</th>
+            <th>Rank</th>
+          </tr>
+        </thead>
+        <tbody id="compBody">
+          <!-- Dynamically populated -->
+        </tbody>
+      </table>
+
+      <div class="actions" style="margin-top:14px;">
+        <button type="button" class="btn" id="btnCopy">📋 Copy Result</button>
+        <button type="button" class="btn" id="btnShare">📤 Share</button>
+      </div>
+    </section>
+  </div>
+
+<!-- ADSENSE START: mid -->
+<div class="ad-box ad-mid">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2228289204702106" data-ad-slot="1186914926" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- ADSENSE END: mid -->
+
+  <section class="card" aria-labelledby="how-h">
+    <h2 id="how-h">🧮 How It Works</h2>
+    <ul>
+      <li><strong>Formula:</strong> Total Protein = Servings × Grams per Serving. Cost per Gram = Price ÷ Total Protein. Cost per 25g = Cost per Gram × 25.</li>
+      <li><strong>Standardized Dosage (25g):</strong> Sports nutrition consensus recommends 20g to 30g of leucine-rich protein post-exercise to maximally stimulate muscle protein synthesis (MPS). Normalizing to 25g provides an objective price-to-benefit comparison.</li>
+      <li><strong>Nutritional Economics:</strong> FoodData Central benchmark data shows that lean poultry, bulk whey concentrate, eggs, and canned fish consistently provide the highest protein yield per dollar spent.</li>
+    </ul>
+    <p class="src">Nutritional data sources: USDA FoodData Central; International Society of Sports Nutrition (ISSN) Position Stand: Protein and Exercise.</p>
+  </section>
+
+  <section class="card id="faq" aria-labelledby="faq-h">
+    <h2 id="faq-h">❓ Frequently Asked Questions</h2>
+    <div class="faq-item"><h3>How is cost per gram of protein calculated?</h3><p>Total protein content is calculated by multiplying the number of servings by the grams of protein per serving. Total price is then divided by total protein grams: Price ÷ (Servings × Grams of Protein per Serving).</p></div>
+    <div class="faq-item"><h3>Which protein sources typically offer the lowest cost per gram?</h3><p>Bulk whey protein concentrate, wholesale chicken breast, canned tuna, and large eggs generally rank as the most cost-effective protein sources, frequently averaging under $0.05 per gram of complete protein.</p></div>
+    <div class="faq-item"><h3>What is the standard 25g serving cost comparison?</h3><p>Because standard athletic and clinical protein doses for muscle protein synthesis range between 20g and 30g per meal, our calculator normalizes all foods to a standard 25g protein portion for easy comparison.</p></div>
+    <div class="faq-item"><h3>Are my grocery prices or meal data saved?</h3><p>No. All cost math runs locally in your web browser. No grocery inputs, prices, or dietary logs are uploaded or stored.</p></div>
+  </section>
+
+  <section class="card notice" aria-labelledby="note-h">
+    <h2 id="note-h">⚠️ Note on Nutrition</h2>
+    <p>Grocery prices fluctuate by region, store brand, and inflation. While cost per gram measures financial efficiency, complete dietary balance requires a variety of micronutrients, fiber, and healthy fatty acids.</p>
+  </section>
 </main>
+
+<!-- ADSENSE START: bottom -->
+<div class="ad-box ad-bottom">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2228289204702106" data-ad-slot="3416334507" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- ADSENSE END: bottom -->
+
+<footer class="footer">
+  <p>Free Protein Cost Per Gram Calculator · 100% private and client-side.</p>
+  <p><a href="/disclaimer.html">Disclaimer</a> | <a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Service</a></p>
+</footer>
+
+<div id="global-ux-toast" class="toast" role="status" aria-live="polite"></div>
+
+<!-- LOGIC START -->
+<script>
+(function () {
+  'use strict';
+  var SITE = 'https://us-protein-cost-per-gram.enjoy-onepage.com';
+  var TOOL_NAME = 'Protein Cost Per Gram Calculator';
+  var toastTimer = null;
+
+  function $(id) { return document.getElementById(id); }
+  function on(id, ev, fn) { var e = $(id); if (e) e.addEventListener(ev, fn); }
+  function fmt(n) { return n.toLocaleString('en-US'); }
+
+  var BENCHMARKS = [
+    { name: 'Whey Protein Powder (5 lb Tub)', price: 64.99, servings: 73, gPerServing: 24 },
+    { name: 'Chicken Breast (3 lb pack)', price: 11.99, servings: 12, gPerServing: 24 },
+    { name: 'Large Eggs (18-count)', price: 4.49, servings: 18, gPerServing: 6 },
+    { name: 'Canned Tuna (5 oz can)', price: 1.49, servings: 2, gPerServing: 15 },
+    { name: 'Greek Yogurt (32 oz tub)', price: 5.49, servings: 5, gPerServing: 18 },
+    { name: 'Extra Firm Tofu (14 oz block)', price: 2.29, servings: 4, gPerServing: 9 }
+  ];
+
+  function calculate() {
+    var name = $('foodName').value.trim() || 'Custom Item';
+    var price = parseFloat($('price').value) || 0;
+    var servings = parseFloat($('servings').value) || 0;
+    var gPerServing = parseFloat($('proteinPerServing').value) || 0;
+
+    var totalProtein = servings * gPerServing;
+    var costPerGram = totalProtein > 0 ? (price / totalProtein) : 0;
+    var costPer25g = costPerGram * 25;
+
+    $('resCostPerGram').textContent = '$' + costPerGram.toFixed(3) + ' / g';
+    $('resCostPer25g').textContent = '$' + costPer25g.toFixed(2) + ' / dose';
+    $('resTotalProtein').textContent = 'Total: ' + fmt(Math.round(totalProtein)) + 'g protein per package';
+
+    // Render comparison list including current custom item
+    var items = BENCHMARKS.slice();
+    // Replace matching preset or add custom
+    var existingIdx = -1;
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].name.toLowerCase() === name.toLowerCase()) {
+        existingIdx = i; break;
+      }
+    }
+    var currentItem = { name: name, price: price, servings: servings, gPerServing: gPerServing, isCurrent: true };
+    if (existingIdx !== -1) {
+      items[existingIdx] = currentItem;
+    } else {
+      items.push(currentItem);
+    }
+
+    // Compute cost per gram for all and sort
+    items.forEach(function (it) {
+      var tot = it.servings * it.gPerServing;
+      it.cpg = tot > 0 ? (it.price / tot) : 999;
+      it.cp25 = it.cpg * 25;
+    });
+    items.sort(function (a, b) { return a.cpg - b.cpg; });
+
+    var tbody = $('compBody');
+    tbody.innerHTML = '';
+    items.forEach(function (it, idx) {
+      var tr = document.createElement('tr');
+      if (it.isCurrent) tr.style.background = '#f0fdf4';
+      var rankBadge = idx === 0 ? '<span class="rank-badge">🏆 #1 Value</span>' : '<span style="color:var(--muted);font-weight:600;">#' + (idx + 1) + '</span>';
+      tr.innerHTML = '<td>' + (it.isCurrent ? '<strong>👉 ' + escapeHtml(it.name) + '</strong>' : escapeHtml(it.name)) + '</td>' +
+        '<td><strong>$' + it.cpg.toFixed(3) + '</strong></td>' +
+        '<td>$' + it.cp25.toFixed(2) + '</td>' +
+        '<td>' + rankBadge + '</td>';
+      tbody.appendChild(tr);
+    });
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function showToast(msg) {
+    var t = $('global-ux-toast'); if (!t) return;
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.classList.remove('show'); }, 2200);
+  }
+
+  function copySummary() {
+    var cpg = $('resCostPerGram').textContent;
+    var cp25 = $('resCostPer25g').textContent;
+    var name = $('foodName').value.trim();
+    var text = '🥩 Protein Cost Analysis for ' + name + ':\n' +
+      '• Cost per gram: ' + cpg + '\n' +
+      '• Cost per 25g serving: ' + cp25 + '\n\n' +
+      'Calculated via ' + TOOL_NAME + ': ' + SITE + '/';
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () { showToast('Analysis copied to clipboard!'); });
+    } else { showToast('Could not copy automatically.'); }
+  }
+
+  on('price', 'input', calculate);
+  on('servings', 'input', calculate);
+  on('proteinPerServing', 'input', calculate);
+  on('foodName', 'input', calculate);
+  on('btnCalculate', 'click', calculate);
+
+  on('btnPresetWhey', function () {
+    $('foodName').value = 'Whey Protein Powder (5 lb Tub)';
+    $('price').value = '64.99';
+    $('servings').value = '73';
+    $('proteinPerServing').value = '24';
+    calculate();
+    showToast('Loaded Whey Protein preset');
+  });
+
+  on('btnPresetChicken', function () {
+    $('foodName').value = 'Chicken Breast (3 lb pack)';
+    $('price').value = '11.99';
+    $('servings').value = '12';
+    $('proteinPerServing').value = '24';
+    calculate();
+    showToast('Loaded Chicken Breast preset');
+  });
+
+  on('btnPresetEggs', function () {
+    $('foodName').value = 'Large Eggs (18-count)';
+    $('price').value = '4.49';
+    $('servings').value = '18';
+    $('proteinPerServing').value = '6';
+    calculate();
+    showToast('Loaded Large Eggs preset');
+  });
+
+  on('btnPresetTuna', function () {
+    $('foodName').value = 'Canned Tuna (5 oz can)';
+    $('price').value = '1.49';
+    $('servings').value = '2';
+    $('proteinPerServing').value = '15';
+    calculate();
+    showToast('Loaded Canned Tuna preset');
+  });
+
+  on('btnCopy', 'click', copySummary);
+  on('btnShare', 'click', function () {
+    var shareMsg = '🥩 Free Protein Cost Per Gram Calculator\n👉 ' + TOOL_NAME + ': ' + SITE + '/';
+    if (navigator.share) {
+      navigator.share({ title: TOOL_NAME, text: shareMsg, url: SITE + '/' }).catch(function (e) {
+        if (!e || e.name !== 'AbortError') copySummary();
+      });
+    } else { copySummary(); }
+  });
+
+  calculate();
+})();
+</script>
+<!-- LOGIC END -->
 </body>
 </html>

@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title>Protein Cost Per Gram Calculator | Whey, Meat &amp; Plant Powder Comparison</title>
+  <title>Protein Cost Per Gram Calculator</title>
   <link>https://us-protein-cost-per-gram.enjoy-onepage.com/</link>
-  <description>Compare whey protein, chicken breast, eggs, and plant powders. Find out the true cost per 20g of pure protein in USD ($).</description>
+  <description>Compare protein powder and food by cost per gram. Find the cheapest protein.</description>
   <language>en-us</language>
   <atom:link href="https://us-protein-cost-per-gram.enjoy-onepage.com/rss.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>Tue, 29 Sep 2026 06:02:40 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 19 Oct 2026 01:08:03 +0000</lastBuildDate>
   <item>
-    <title>Disclaimer | Protein Cost Per Gram Calculator | Whey, Meat &amp; Plant Powder Comparison</title>
+    <title>Disclaimer | Protein Cost Per Gram Calculator</title>
     <link>https://us-protein-cost-per-gram.enjoy-onepage.com/disclaimer.html</link>
     <guid isPermaLink="true">https://us-protein-cost-per-gram.enjoy-onepage.com/disclaimer.html</guid>
-    <description>Disclaimer | Protein Cost Per Gram Calculator | Whey, Meat &amp; Plant Powder Comparison</description>
-    <pubDate>Sun, 20 Sep 2026 22:12:11 +0900</pubDate>
+    <description>Disclaimer for the Protein Cost Per Gram Calculator.</description>
+    <pubDate>Mon, 19 Oct 2026 01:08:03 +0000</pubDate>
   </item>
   <item>
-    <title>Terms of Service | Protein Cost Per Gram Calculator | Whey, Meat &amp; Plant Powder Comparison</title>
-    <link>https://us-protein-cost-per-gram.enjoy-onepage.com/terms.html</link>
-    <guid isPermaLink="true">https://us-protein-cost-per-gram.enjoy-onepage.com/terms.html</guid>
-    <description>Terms of Service | Protein Cost Per Gram Calculator | Whey, Meat &amp; Plant Powder Comparison</description>
-    <pubDate>Sun, 20 Sep 2026 22:12:11 +0900</pubDate>
-  </item>
-  <item>
-    <title>Privacy Policy | Protein Cost Per Gram Calculator | Whey, Meat &amp; Plant Powder Comparison</title>
+    <title>Privacy Policy | Protein Cost Per Gram Calculator</title>
     <link>https://us-protein-cost-per-gram.enjoy-onepage.com/privacy.html</link>
     <guid isPermaLink="true">https://us-protein-cost-per-gram.enjoy-onepage.com/privacy.html</guid>
-    <description>Privacy Policy | Protein Cost Per Gram Calculator | Whey, Meat &amp; Plant Powder Comparison</description>
-    <pubDate>Sun, 20 Sep 2026 22:12:11 +0900</pubDate>
+    <description>Privacy Policy for the Protein Cost Per Gram Calculator.</description>
+    <pubDate>Mon, 19 Oct 2026 01:08:03 +0000</pubDate>
+  </item>
+  <item>
+    <title>Terms of Service | Protein Cost Per Gram Calculator</title>
+    <link>https://us-protein-cost-per-gram.enjoy-onepage.com/terms.html</link>
+    <guid isPermaLink="true">https://us-protein-cost-per-gram.enjoy-onepage.com/terms.html</guid>
+    <description>Terms of Service for the Protein Cost Per Gram Calculator.</description>
+    <pubDate>Mon, 19 Oct 2026 01:08:03 +0000</pubDate>
   </item>
 </channel>
 </rss>
